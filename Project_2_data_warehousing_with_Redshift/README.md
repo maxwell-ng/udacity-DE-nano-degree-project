@@ -59,6 +59,7 @@ Find the number of songplays by weekday:
     ORDER BY t.weekday;
 </code>
 Result:
+![alt txt](https://github.com/maxwell-ng/udacity-DE-nano-degree-project/blob/main/Project_2_data_warehousing_with_Redshift/img/result%202.jpg?raw=true)
 
 Get the distribution of users by gender:
 <code>
@@ -67,4 +68,5 @@ Get the distribution of users by gender:
     JOIN users u ON s.user_id = u.user_id
     GROUP BY u.gender;
 </code>
-
+Result:
+![alt txt](https://github.com/maxwell-ng/udacity-DE-nano-degree-project/blob/main/Project_2_data_warehousing_with_Redshift/img/result%203.jpg?raw=true)
