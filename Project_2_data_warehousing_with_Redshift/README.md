@@ -40,6 +40,7 @@ In summary, the chosen database schema design and ETL pipeline provide a solid f
 ## Example queries
 
 Retrieve the top 5 users with the highest number of songplay:
+
 <code>
     SELECT u.user_id, u.first_name, u.last_name, COUNT(*) AS songplay_count
     FROM songplay sp
@@ -48,9 +49,12 @@ Retrieve the top 5 users with the highest number of songplay:
     ORDER BY songplay_count DESC
     LIMIT 5;
 </code>
+
 Result:
 ![alt text](https://github.com/maxwell-ng/udacity-DE-nano-degree-project/blob/main/Project_2_data_warehousing_with_Redshift/img/result%201.jpg?raw=true)
+
 Find the number of songplays by weekday:
+
 <code>
     SELECT t.weekday, COUNT(*) AS songplay_count
     FROM songplay s
@@ -58,15 +62,20 @@ Find the number of songplays by weekday:
     GROUP BY t.weekday
     ORDER BY t.weekday;
 </code>
+
 Result:
-![alt txt](https://github.com/maxwell-ng/udacity-DE-nano-degree-project/blob/main/Project_2_data_warehousing_with_Redshift/img/result%202.jpg?raw=true)
+
+![alt text](https://github.com/maxwell-ng/udacity-DE-nano-degree-project/blob/main/Project_2_data_warehousing_with_Redshift/img/result%202.jpg?raw=true)
 
 Get the distribution of users by gender:
+
 <code>
     SELECT u.gender, COUNT(*) AS songplay_count
     FROM songplay s
     JOIN users u ON s.user_id = u.user_id
     GROUP BY u.gender;
 </code>
+
 Result:
-![alt txt](https://github.com/maxwell-ng/udacity-DE-nano-degree-project/blob/main/Project_2_data_warehousing_with_Redshift/img/result%203.jpg?raw=true)
+
+![alt text](https://github.com/maxwell-ng/udacity-DE-nano-degree-project/blob/main/Project_2_data_warehousing_with_Redshift/img/result%203.jpg?raw=true)
