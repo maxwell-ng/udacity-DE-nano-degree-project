@@ -2,8 +2,8 @@
 
 The database built for Sparkify serves as an analytical foundation for the startup to gain insights and make data-driven decisions. Its purpose is to store and organize the relevant data in a structured manner, enabling efficient querying and analysis.
 For context:
-1. **Understanding User Behavior**: By capturing data such as songplays, user details, and timestamps, Sparkify can analyze user behavior patterns. They can determine which songs are popular, identify user preferences, and understand usage patterns based on factors like location, gender, and user level. This information can help Sparkify optimize their services, personalize recommendations, and tailor their offerings to enhance user satisfaction.
-2. **Business Performance Analysis**: The database allows Sparkify to track key performance indicators (KPIs) such as total songplays, user demographics, and user churn rates. By analyzing these metrics over time, Sparkify can evaluate the success of things like marketing campaigns, monitor user acquisition and retention efforts, and make data-driven decisions to drive business growth.
+1. **Understanding User Behavior**: By capturing data such as songplays, user details, and timestamps, Sparkify can analyze user behaviour patterns. They can determine popular songs, identify user preferences, and understand usage patterns based on location, gender, and user level. This information can help Sparkify optimize their services, personalize recommendations, and tailor their offerings to enhance user satisfaction.
+2. **Business Performance Analysis**: The database allows Sparkify to track key performance indicators (KPIs) such as total songplays, user demographics, and user churn rates. By analyzing these metrics over time, Sparkify can evaluate the success of marketing campaigns, monitor user acquisition and retention efforts, and make data-driven decisions to drive business growth.
 3. **Optimizing User Experience**: The database's time dimension table enables Sparkify to analyze user activity trends over specific time periods, such as hourly, daily, weekly, or monthly patterns. This information helps Sparkify identify peak usage times, optimize server capacity, plan maintenance windows, and deliver a seamless user experience without performance bottlenecks.
 4. **Improving Content Curation**: The database's dimension tables, such as songs and artists, provide essential information about the content available on the platform. Analyzing song attributes, genres, artist popularity, and user engagement with different types of content can help Sparkify curate and deliver a diverse and appealing music library. This contributes to increased user engagement and retention.
 
@@ -16,7 +16,7 @@ The database schema design for Sparkify's analytics database follows a star sche
 2. **Dimension Tables:** The dimension tables (users, songs, artists, time) provide additional context and descriptive attributes related to the events recorded in the fact table. They enable detailed analysis and drill-down capabilities. By separating these attributes into dimension tables, redundancy is reduced, and data integrity is maintained.
 
 **ETL Pipeline:**
-The Extract, Transform, Load (ETL) pipeline is responsible for extracting data from S3 buckets, loading it in raw format into staging tables, then transforming it into a suitable format, and loading it into fact and dimension tables. Here's a justification for the chosen ETL pipeline approach:
+The Extract, Transform, Load (ETL) pipeline is responsible for extracting data from S3 buckets, loading it in raw format into staging tables, then transforming it into a suitable form, and loading it into fact and dimension tables. Here's a justification for the chosen ETL pipeline approach:
 
 1. **Extract:** The ETL pipeline extracts data from relevant S3 buckets to Sparkify database, such as song streaming log files and song data.
 2. **Transform:** The transformation stage involves cleaning, filtering, and structuring the extracted data. This process ensures data consistency, resolves inconsistencies, performs data type conversions, and applies business rules to derive meaningful insights. 
@@ -49,7 +49,7 @@ Retrieve the top 5 users with the highest number of songplay:
     LIMIT 5;
 </code>
 Result:
-
+![alt text](https://github.com/maxwell-ng/udacity-DE-nano-degree-project/blob/main/Project_2_data_warehousing_with_Redshift/img/result%201.jpg?raw=true)
 Find the number of songplays by weekday:
 <code>
     SELECT t.weekday, COUNT(*) AS songplay_count
